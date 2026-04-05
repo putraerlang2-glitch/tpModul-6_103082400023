@@ -1,2 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using System;
+using tpModul6_103082400023;
+
+SayaTubeVideo video = new SayaTubeVideo("“Tutorial Design By Contract Erlang");
+video.increasePlayCount(50);
+video.printVideoDetails();
+
