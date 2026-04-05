@@ -13,6 +13,10 @@ namespace tpModul6_103082400023
         private int playCount;
         public SayaTubeVideo(string tittle)
         {
+            if(tittle == null || tittle.Length > 100)
+            {
+                throw new ArgumentException("Judul tidak boleh null dan tidak boleh lebih dari 100 huruf");
+            }
             Random random = new Random();
             this.id = random.Next(10000, 99999);
             this.tittle = tittle;
@@ -21,7 +25,16 @@ namespace tpModul6_103082400023
 
         public void increasePlayCount(int count)
         {
-            playCount += count;
+            if(count < 0 || count > 10000000)
+            {
+                throw new ArgumentException("Inputan Tidak Valid");
+            }
+
+            checked 
+            {
+                playCount += count;
+            }
+            
         }
         public void printVideoDetails()
         {
